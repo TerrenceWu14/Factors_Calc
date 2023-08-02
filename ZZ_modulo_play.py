@@ -20,4 +20,6 @@ while keep_going == "":
     print()
     print(" You have {} lollies and {} students"
           .format(num_lollies, num_students))
-
+    print()
+    keep_going = input(" Press <enter> to continue or any key to quit ")
+    print()
