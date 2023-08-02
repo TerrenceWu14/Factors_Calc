@@ -59,6 +59,7 @@ def num_check(question):
 # Gets factors, returns a sorted list
 def get_factors(to_factor):
 
+
 # Main Routine
 
 # Heading
@@ -76,37 +77,38 @@ while keep_going == "":
     comment = ""
 
     # Asks the user for the number
-    number_to_factor = num_check("Number? ")
+    var_to_factor = num_check("Number? ")
 
-    if number_to_factor != 1:
-        factor_list = get_factors(number_to_factor)
+    if var_to_factor != 1:
+        factor_list = get_factors(var_to_factor)
     else:
         factors_list = ""
         comment = "One is unity! It only has one factor and that is itself."
 
     # Comments for squares / primes
-    if len(factor_list) == 2:
-        comment = "{} is a prime number.".format(number_to_factor)
-    elif len(factor_list) % 2 == 1:
-        comment = "{} is a perfect square" .format(number_to_factor)
-
-    # Generates heading
-    if number_to_factor == 1:
-        heading = "One is special"
-
-    else:
-        heading = "Factors of {}.".format(number_to_factor)
+    if len(factors_list) == 2:
+        comment = "{} is a prime number.".format(var_to_factor)
+    elif len(factors_list) % 2 == 1:
+        comment = "{} is a perfect square".format(var_to_factor)
 
     # Outputs factors and comment
+
+    # Generate heading
+    if var_to_factor == 1:
+        heading = "One is special"
+    else:
+        heading = "Factors of {}".format(var_to_factor)
+
+    # Output factors and comment
     statement_generator(heading, "*")
     print()
-    print(factor_list)
-    print(comment)
+    print(factors_list)
+    print()
 
     print()
     keep_going = input(" Press <enter> to continue or any key to quit ")
     print()
 
-print()
-print("Thank you for using the factors calculator")
-print()
+    print()
+    print("Thank you for using the factors calculator")
+    print()
