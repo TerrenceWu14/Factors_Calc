@@ -5,10 +5,6 @@ def instructions():
     statement_generator("Instructions / Information", "=")
     print()
     print(" Please type a number between 1 to 200 (with no decimals)")
-    print()
-    print("This program assumes that images are being represented in 24 bit color (ie: 24 bits per pixel). "
-          "For text we assume that ascii encoding is being used (8 bits per character)")
-    print()
     print("Complete as many calculations as necessary, "
           "pressing <enter> at the end of each calculator or any key to quit.")
     print()
@@ -36,12 +32,12 @@ def num_check(question):
     valid = False
     while not valid:
 
-        error = "Please enter a number that is more than zero and lower (or equal to) than 200"
+        error = "Please enter a number that is more than zero and lower (or equal to) than 200 (no decimals)"
 
         try:
 
             # asks user to enter a number
-            response = float(input(question))
+            response = int(input(question))
 
             # checks if a number is above zero
             if 0 < response <= 200:
@@ -58,6 +54,7 @@ def num_check(question):
 
 # Gets factors, returns a sorted list
 def get_factors(to_factor):
+    pass
 
 
 # Main Routine
@@ -77,7 +74,7 @@ while keep_going == "":
     comment = ""
 
     # Asks the user for the number
-    var_to_factor = num_check("Number? ")
+    var_to_factor = num_check("Please type a number between 1 to 200 (with no decimals):")
 
     if var_to_factor != 1:
         factor_list = get_factors(var_to_factor)
@@ -109,6 +106,6 @@ while keep_going == "":
     keep_going = input(" Press <enter> to continue or any key to quit ")
     print()
 
-    print()
-    print("Thank you for using the factors calculator")
-    print()
+print()
+print("Thank you for using the factors calculator")
+print()
