@@ -78,7 +78,6 @@ while keep_going == "":
     else:
         # Finds factors and returns sorted list
         sqrt_to_factor = int(to_factor ** 0.5)
-
         for item in range(1, sqrt_to_factor + 1):
             remainder = to_factor % item
             possible_factor = to_factor // item
@@ -87,11 +86,16 @@ while keep_going == "":
                 factor_list.append(item)
                 if item != to_factor // item:
                     factor_list.append(to_factor // item)
-
                 factor_list.sort()
 
-    print("Factors: ", factor_list)
     print()
+    # print("Factors: ", factor_list)
+    print(f"👀👀👀 Factors of {to_factor} 👀👀👀")
+    # checks if the number is a perfect square or a prime number
+    if len(factor_list) % 2 == 1 and to_factor != 1:
+        print(f"{to_factor} is a perfect square! 🟧")
+    elif len(factor_list) == 2:
+        print(f"{to_factor} is a prime number! ")
     keep_going = input("Press <enter> to continue or any key to quit ")
     print()
 
